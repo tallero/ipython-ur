@@ -7,24 +7,53 @@
 
 pkgname=ipython
 pkgver=8.15.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Enhanced Interactive Python shell'
 arch=('any')
 url=https://ipython.org
 license=('BSD')
-depends=('python' 'python-traitlets' 'python-pexpect' 'sqlite'
-         'python-pickleshare' 'python-prompt_toolkit'
-         'python-jedi' 'python-pygments' 'python-backcall'
-         'python-matplotlib-inline' 'python-stack-data')
-makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
-# texlive-bin checkdep excluded due to test_latex_to_png_color failure
-checkdepends=('git' 'python-pytest' 'python-pytest-asyncio' 'python-testpath'
-              'jupyter-nbformat' 'python-ipykernel' 'python-numpy' 'python-trio'
-              'python-matplotlib' 'python-curio' 'python-pandas' 'tcsh')
-optdepends=('python-black: to auto format with Black'
-            'yapf: to auto format with YAPF')
-source=("https://github.com/ipython/ipython/archive/$pkgver/$pkgname-pkgver.tar.gz"
-        'IPython-icon.png::https://www.packal.org/sites/default/files/public/styles/icon_large/public/workflow-files/nkeimipynbworkflow/icon/icon.png')
+depends=(
+  'python-backcall'
+  'python-jedi'
+  'python-matplotlib-inline'
+  'python-pexpect'
+  'python-pickleshare'
+  'python-prompt_toolkit'
+  'python-pygments'
+  'python-stack-data'
+  'python-traitlets'
+  'sqlite'
+)
+makedepends=(
+  'python-build'
+  'python-installer'
+  'python-setuptools'
+  'python-wheel'
+)
+checkdepends=(
+  'git'
+  'jupyter-nbformat'
+  'python-curio'
+  'python-ipykernel'
+  'python-matplotlib'
+  'python-numpy'
+  'python-pandas'
+  'python-pytest'
+  'python-pytest-asyncio'
+  'python-testpath'
+  'python-trio'
+  'tcsh'
+  'texlive-bin'
+  'texlive-latex'
+)
+optdepends=(
+  'python-black: to auto format with Black'
+  'yapf: to auto format with YAPF'
+)
+source=(
+  "https://github.com/ipython/ipython/archive/$pkgver/$pkgname-$pkgver.tar.gz"
+  'IPython-icon.png::https://www.packal.org/sites/default/files/public/styles/icon_large/public/workflow-files/nkeimipynbworkflow/icon/icon.png'
+)
 b2sums=('9b2f10686a3c65e4085994904d38552bd263b809a7c6714823bda43f2d66976d9f094aded5b40a416ca10e0261583bdd590b2ca534a58737d8dd9ee9024b82ad'
         'd445e2bc7a037db8715ea103611720e965987e155c32e445b0ef783e519fca8a0301b16c5763fd9a5d8d169c3b0d7b4db6c0bd0f9772842258b135dcb1d6d5a2')
 
